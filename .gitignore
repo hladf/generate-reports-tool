@@ -1,0 +1,5 @@
+node_modules/
+.env
+*.xlsx
+src/reports/*.json
+*.log

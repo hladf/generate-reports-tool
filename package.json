@@ -1,0 +1,29 @@
+{
+  "name": "generate-reports-tool",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "repository": "https://github.com/hladf/generate-reports-tool.git",
+  "author": "hladf",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node ./src/index.ts",
+    "report": "ts-node ./src/index.ts --reportBombcryptoHeroes",
+    "build": "--tsc"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.1",
+    "node-fetch": "2",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/colors": "^1.2.1",
+    "@types/dotenv": "^8.2.0",
+    "@types/node": "^17.0.41",
+    "@types/node-fetch": "^2.6.1",
+    "@types/xlsx": "^0.0.36",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
+  }
+}
