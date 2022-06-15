@@ -4,12 +4,14 @@ import { bombcryptoMarketplaceMock } from '../mocks';
 import { BombCryptoHeroListResponse } from '../models';
 
 type GetMarketplaceHerosParams = {
+  rarity: number[];
+  ability: number[];
   page?: number;
   size?: number;
   order_by?: string;
   s_ability?: number;
-  rarity: number[];
-  ability: number[];
+  bomb_power?: number;
+  stamina?: number;
 };
 
 export async function getMarketplaceHeros({
@@ -19,6 +21,8 @@ export async function getMarketplaceHeros({
   s_ability = 1,
   rarity,
   ability = [5],
+  bomb_power,
+  stamina,
 }: GetMarketplaceHerosParams) {
   if (TEST_MODE) {
     console.log(`getMarketplaceHeros() Mock`);
@@ -34,6 +38,8 @@ export async function getMarketplaceHeros({
     size,
     order_by,
     s_ability,
+    bomb_power,
+    stamina,
   });
   const URL = `https://market-api.bombcrypto.io/api/v1/transactions/heroes/search?${params}${parsedRarity}${parsedAbilities}`;
 
