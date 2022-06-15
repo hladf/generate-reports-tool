@@ -34,9 +34,9 @@ if (process.argv.includes('--reportBombcryptoHeroes')) {
 
   runHerosReport({
     ability: [AbilityEnum.ManaRegen],
-    rarity: [RarityEnum.Common],
+    rarity: [RarityEnum.Rare],
     size: 500,
-    bomb_power: 3,
+    bomb_power: 4,
   });
 } else {
   console.log('Codigo nao implementado');
