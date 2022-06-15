@@ -72,10 +72,10 @@ export function generateHerosReport(
     }
   );
 
-  /** remove 1/1/1 heros */
-  let filtered = formatted.filter(
-    (i) => i.speed > 1 && i.bomb_power > 1 && i.stamina > 1
-  );
+  /** remove 1/1/1 heros and sort by price */
+  let filtered = formatted
+    .filter((i) => i.speed > 1 && i.bomb_power > 1 && i.stamina > 1)
+    .sort((a, b) => a.priceBCOIN - b.priceBCOIN);
 
   // if (sortByPayback) {
   //   filtered = filtered.sort((a, b) => a.paybackEmDias - b.paybackEmDias);
@@ -144,7 +144,10 @@ export async function runHerosReport(
     //   );
     // }
     generateHerosReport(response);
-    writeDataToFile({ data: response, date: new Date() }, 'src/reports/data.json');
+    writeDataToFile(
+      { data: response, date: new Date() },
+      'src/reports/data.json'
+    );
   } catch (error) {
     console.error('===========\n\n', error, '\n\n=============');
   }
